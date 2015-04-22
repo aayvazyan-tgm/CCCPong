@@ -24,12 +24,14 @@ public class Game {
 
     public void onUpdate() {
         int move = 0;
+        System.out.println("PreviousMove: "+playerV);
+        System.out.println("curentPos: "+playerX);
         int playerX = this.playerX + 75;
         float diff = (playerX - (float) ballY);
-//        if(ballXV>0)diff=playerX+75-300;
-        move = (int) -diff;
-        if(diff>36)move = -36;
-        else if(diff<-36)move = 36;
+        if(ballXV>0)diff=playerX-300;
+        if (diff > 36) move = -36;
+        else if (diff < -36) move = 36;
+        System.out.println("Moving: "+move);
         commander.move(move);
     }
 }

@@ -15,7 +15,6 @@ public class GameUpdater implements InputHandler {
 
     @Override
     public void handleInput(String input) {
-        System.out.println(input);
         String[] splittetInput = input.split(" ");
         switch (splittetInput[0]) {
             case "player":

@@ -24,12 +24,11 @@ public class Game {
 
     public void onUpdate() {
         int move = 0;
-        float diff = (playerX +150/2 - (float)ballY);
-        System.out.println("diff :"+diff);
-        move = (int) diff;
-        if(diff/36f>1&&!(diff/36f<1))move=-36;
-        if(diff/36f<1&&!(diff/36f>1))move=36;
-        System.out.println(move);
+        float diff = (playerX+75 - (float)ballY);
+        move = (int) -diff;
+        float div=diff/36f;
+        if(div>1&&div>-1)move=-36;
+        if(div<1&&div<-1)move=36;
         commander.move(move);
     }
 }

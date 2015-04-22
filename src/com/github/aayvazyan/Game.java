@@ -28,16 +28,8 @@ public class Game {
         float diff = (playerX - (float) ballY);
 //        if(ballXV>0)diff=playerX+75-300;
         move = (int) -diff;
-        float div = diff / 36f;
-        if (div > 1 || div < 1) {
-            if (div > 1) {
-                move = -36;
-            } else {
-                move = 36;
-            }
-        } else {
-
-        }
+        if(diff>36)move = -36;
+        else if(diff<-36)move = 36;
         commander.move(move);
     }
 }
